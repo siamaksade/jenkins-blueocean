@@ -11,5 +11,7 @@ oc new-build jenkins:2~https://github.com/siamaksade/jenkins-blueocean.git --nam
 Then you can deploy the Jenkins templates with the customized image. Replace BLUEOCEAN_IMAGE_NAMESPACE 
 with the project where the above S2I build is created:
 ```
-oc new-app jenkins-ephemeral -p NAMESPACE=BLUEOCEAN_IMAGE_NAMESPACE -p JENKINS_IMAGE_STREAM_TAG=jenkins-blueocean:latest 
+oc new-app jenkins-ephemeral \
+    -p NAMESPACE=BLUEOCEAN_IMAGE_NAMESPACE \
+    -p JENKINS_IMAGE_STREAM_TAG=jenkins-blueocean:latest 
 ```
